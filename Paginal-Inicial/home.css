@@ -1,28 +1,34 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    scroll-behavior: smooth;/* scroll suave */
 }
 
+/* Fonte */
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #F6F7F8;
     color: #1C1C1C;
 }
 
+
 header {
-    background: #0E5E4D;
-    padding: 2rem 5%;
-    position: sticky;
-    top: 0;
+    background: #0E5E4D; /* Cor de fundo do cabeçalho */
+    padding: 2rem 5%; /* Espaçamento interno do cabeçalho */
+    position: sticky; /* Fixa o cabeçalho no topo da página */
+    top: 0; 
     left: 0;
     right: 0;
     z-index: 999;
-    animation: slide 0.6s ease-out;
+    animation: slide 0.6s ease-out; /* Animação de deslizamento */
 }
 
+/* Animação de deslizamento */
+/* A animação faz com que o cabeçalho deslize para baixo quando a página é carregada */
 @keyframes slide {
     from {
         transform: translateY(-100%);
