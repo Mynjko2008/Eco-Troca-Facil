@@ -78,10 +78,11 @@ header {
 }
 
 .containerHome {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 65vh;
-    padding: 12em 0;
-    text-align: center;
 }
 
 .containerHome h1 {
@@ -91,8 +92,7 @@ header {
 
 .containerHome h2 {
     color: #388E3C;
-    font-size: 1.6em;
-    padding: 1em 0 2em 0;
+    padding: 1em 0;
 }
 
 .btn-2 {
@@ -106,4 +106,81 @@ header {
 
 .btn-2:hover {
     background: #094236;
+}
+
+.containerPlaneta {
+    width: 20%;
+    position: relative;
+    padding-right: 40em;
+    transform: translateX(-50%);
+    animation: slideLeft 1.8s ease forwards;
+}
+
+.planeta {
+    width: 500px;
+    animation: slidePlaneta 1.2s ease forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+}
+
+.home {
+    overflow: hidden;
+    animation: fadeTexto 1.2s ease forwards;
+    animation-delay: 1s;
+    opacity: 0;
+    position: relative;
+    z-index: 2;
+    padding-right: 20em;
+    
+}
+
+@keyframes slideLeft {
+  from {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  to {
+    left: 10%;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slidePlaneta {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeTexto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.containerCategorias {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50vh;
+    background-color: #F5F5F5;
+}
+
+.containerCategorias h1 {
+    font-size: 2.5em;
+    color: #2E7D32;
+}
+
+.categorias {
+    display: flex;
+    text-align: center;
+    padding-top: 3em;
+    gap: 10em;
+}
+
+.card {
+    border: 1px solid red;
+    width: 10rem;
+    height: 10rem;
 }
