@@ -186,7 +186,59 @@ header {
 }
 
 .card {
-    border: 1px solid red;
     width: 10rem;
-    height: 10rem;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card i {
+    font-size: 5em;
+    padding-bottom: 25%;
+    color: white;
+}
+
+.card p {
+    font-weight: 700;
+}
+
+.Livros {
+    background-color: #A5D6A7;
+}
+
+.Livros a {
+    color: #2E7D32;
+}
+
+.Roupas {
+    background-color: #81D4FA;
+}
+
+.Roupas a {
+    color: #424242;
+}
+
+.Brinquedos {
+    background-color: #FBC02D;
+}
+
+.Brinquedos a {
+    color: #424242;
+}
+
+.Eletrônicos {
+    background-color: #333030;
+}
+
+.Eletrônicos a {
+    color: #2E7D32;
 }
