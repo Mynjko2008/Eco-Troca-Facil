@@ -5,7 +5,8 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    scroll-behavior: smooth;/* scroll suave */
+    scroll-behavior: smooth;
+    /* scroll suave */
 }
 
 /* Fonte */
@@ -15,16 +16,24 @@ body {
     color: #1C1C1C;
 }
 
+section {
+    border-bottom: 2px solid #abccc2;
+}
 
 header {
-    background: #0E5E4D; /* Cor de fundo do cabeçalho */
-    padding: 2rem 5%; /* Espaçamento interno do cabeçalho */
-    position: sticky; /* Fixa o cabeçalho no topo da página */
-    top: 0; 
+    background: #0E5E4D;
+    /* Cor de fundo do cabeçalho */
+    padding: 2rem 5%;
+    /* Espaçamento interno do cabeçalho */
+    position: sticky;
+    /* Fixa o cabeçalho no topo da página */
+    width: 100%;
+    top: 0;
     left: 0;
     right: 0;
     z-index: 999;
-    animation: slide 0.6s ease-out; /* Animação de deslizamento */
+    animation: slide 0.6s ease-out;
+    /* Animação de deslizamento */
 }
 
 /* Animação de deslizamento */
@@ -76,9 +85,11 @@ header {
 }
 
 .btn-1::before {
-    content: '\f007';  /* Unicode do ícone de usuário da Font Awesome */
+    content: '\f007';
+    /* Unicode do ícone de usuário da Font Awesome */
     font-family: 'Font Awesome 6 Free';
-    font-weight: 900; /* necessário para ícones sólidos */
+    font-weight: 900;
+    /* necessário para ícones sólidos */
     margin-right: 8px;
     color: #0E5E4D;
 }
@@ -137,31 +148,32 @@ header {
     position: relative;
     z-index: 2;
     padding-right: 20em;
-    
+
 }
 
 @keyframes slideLeft {
-  from {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  to {
-    left: 10%;
-    transform: translateX(0);
-  }
+    from {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    to {
+        left: 10%;
+        transform: translateX(0);
+    }
 }
 
 @keyframes slidePlaneta {
-  to {
-    opacity: 1;
-  }
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes fadeTexto {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .containerCategorias {
@@ -176,12 +188,13 @@ header {
 .containerCategorias h1 {
     font-size: 2.5em;
     color: #2E7D32;
+    padding-top: 1em;
 }
 
 .categorias {
     display: flex;
     text-align: center;
-    padding-top: 3em;
+    padding: 3em;
     gap: 10em;
 }
 
@@ -192,13 +205,13 @@ header {
     flex-direction: column;
     justify-content: center;
     border-radius: 15px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 .card i {
@@ -241,4 +254,69 @@ header {
 
 .Eletrônicos a {
     color: #2E7D32;
+}
+
+.containerDestaque {
+    width: 100%;
+    height: 85vh;
+    padding: 0 15em;
+    text-align: center;
+}
+
+.containerDestaque h1 {
+    font-size: 2.5em;
+    color: #2D6A4F;
+    padding-top: 1em;
+}
+
+.itens {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    gap: 2em;
+    padding: 5em 0 0 9em;
+}
+
+.box {
+    width: 15em;
+    height: 15em;
+    padding-top: 1em;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    line-height: 1.2em;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s ease;
+    border-radius: 15px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(145deg, #f0f7f4, #ffffff);
+}
+
+.box.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nome {
+    color: #22543d;
+}
+
+.cidade {
+    color: #4a5568;
+}
+
+.tipo {
+    color: #2b6cb0;
+}
+
+span {
+    font-weight: 800;
+}
+
+.itens img {
+    width: 150px;
+    border-radius: 15px;
 }
