@@ -15,6 +15,4 @@ const observar = new IntersectionObserver(entries => { // Essas setas é uma fun
 });
 
 
-boxes.forEach(box => {
-  observar.observe(box);
-});
+boxes.forEach(box => {observar.observe(box);}); //pense no => no seu código como "execute esta função com estes parâmetros". Ele aponta para o bloco de código que será executado.
