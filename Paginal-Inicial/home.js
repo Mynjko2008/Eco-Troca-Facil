@@ -5,11 +5,15 @@ const observar = new IntersectionObserver(entries => { // Essas setas é uma fun
   entries.forEach(entry => {
     if (entry.isIntersecting) { // É uma propriedade booleana (true ou false)
       entry.target.classList.add('appear');
+    } else {
+      entry.target.classList.remove('appear');
     }
   });
 }, {
-  threshold: 0.4 // 20% visível já dispara a animação
+  threshold: 0.4 // 40% visível já dispara a animação
+  
 });
+
 
 boxes.forEach(box => {
   observar.observe(box);

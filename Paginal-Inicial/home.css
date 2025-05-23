@@ -94,12 +94,13 @@ header {
     color: #0E5E4D;
 }
 
+/*inicio da Section 1*/
 .containerHome {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 65vh;
+    height: 50rem;
 }
 
 .containerHome h1 {
@@ -142,19 +143,25 @@ header {
 
 .home {
     overflow: hidden;
+    /*overflow = transbordamento (conteúdo que sai para fora da caixa), hidden = esconde o que estiver para fora dos limites do elemento*/
     animation: fadeTexto 1.2s ease forwards;
+    /*forwards Isso diz:
+“Quando a animação acabar, deixe o estilo final aplicado (não volte pro começo)”.*/
     animation-delay: 1s;
     opacity: 0;
     position: relative;
+    /*relative Move o elemento em relação à posição original dele sem sair do fluxo da página.*/
     z-index: 2;
     padding-right: 20em;
 
 }
 
+/* Inicio da animação da img do planeta*/
 @keyframes slideLeft {
     from {
         left: 50%;
         transform: translateX(-50%);
+        /*translateX(-50%) → Move para a esquerda 50% da própria largura*/
     }
 
     to {
@@ -173,15 +180,21 @@ header {
     to {
         opacity: 1;
         transform: translateY(0);
+        /*translateY(0) → Não move nada, ou seja, o elemento fica na posição original*/
     }
+
+    /*Fim da animação da img do planeta*/
 }
 
+/*Fim da Section 1*/
+
+/*Inicio da Section 2 */
 .containerCategorias {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 50vh;
+    height: 30rem;
     background-color: #F5F5F5;
 }
 
@@ -256,9 +269,12 @@ header {
     color: #2E7D32;
 }
 
+/*Fim da Section 2*/
+
+/*Inicio da Section 3*/
 .containerDestaque {
     width: 100%;
-    height: 85vh;
+    height: 50rem;
     padding: 0 15em;
     text-align: center;
 }
@@ -272,6 +288,8 @@ header {
 .itens {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+    /*O auto-fit é um valor especial que detecta automaticamente quantas colunas cabem dentro do container.
+Ele ajusta o número de colunas com base no espaço disponível. 1fr → Tamanho máximo (cada coluna pode crescer até ocupar o espaço disponível proporcionalmente).*/
     gap: 2em;
     padding: 5em 0 0 9em;
 }
@@ -285,12 +303,15 @@ header {
     text-align: center;
     opacity: 0;
     transform: translateY(30px);
+    /*translateY move o elemento na vertical (eixo Y). 30px significa que o elemento vai descer 30 pixels a partir da sua posição original.*/
     transition: opacity 1s ease, transform 1s ease;
+    /*ease é a função de tempo (faz a transição começar devagar, acelerar no meio e desacelerar no final).*/
     border-radius: 15px;
 }
 
 .box:hover {
     transform: scale(1.05);
+    /*scale() é uma função de transformação do CSS. O número dentro dos parênteses representa a escala do elemento. 1.05 = aumenta 5% (fica 1.05x maior).*/
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: linear-gradient(145deg, #f0f7f4, #ffffff);
 }
@@ -319,4 +340,27 @@ span {
 .itens img {
     width: 150px;
     border-radius: 15px;
+}
+
+/*Fim da Section 3*/
+
+.containerChamada {
+    width: 100%;
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+}
+
+.chamada {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    text-align: center;
+    padding: 3em 0 0 0;
+    font-size: 2.5em;
+    color: #2E7D32;
 }
