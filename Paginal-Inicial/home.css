@@ -349,6 +349,7 @@ span {
     height: 35rem;
     display: flex;
     justify-content: center;
+     background-color: #e6f4ea;
 }
 
 .chamada {
@@ -356,6 +357,28 @@ span {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
+
+.chamada p {
+    font-size: 1.1em;
+    max-width: 700px;
+    line-height: 1.5em;
+    padding-bottom: 5em;
+}
+
+.cta  {
+    width: 20em;
+    height: 2em;
+    border: none;
+    border-radius: 7px;
+    font-weight: 800;
+    background-color: #2c5f2d;
+    color: white;
+}
+
+.cta:hover {
+  background-color: #244d25;
 }
 
 .titulo {
@@ -363,4 +386,5 @@ span {
     padding: 3em 0 0 0;
     font-size: 2.5em;
     color: #2E7D32;
+    background-color: #e6f4ea;
 }
