@@ -34,6 +34,11 @@ header {
     z-index: 999;
     animation: slide 0.6s ease-out;
     /* Animação de deslizamento */
+    transition: box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Animação de deslizamento */
@@ -48,6 +53,11 @@ header {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+#menu {
+    color: white;
+    display: none;
 }
 
 .navegacao {
@@ -190,7 +200,7 @@ header {
 
 /*Inicio da sessão sobre o projeto */
 .sobre {
-    background: linear-gradient(180deg,#e6f4ea8f, #d0e8d031), url(img/Fundo_sobre.png);
+    background: linear-gradient(180deg, #e6f4ea8f, #d0e8d031), url(img/Fundo_sobre.png);
     background-color: #f0fdf4;
     /* verde suave */
     padding: 80px 20px;
@@ -216,6 +226,7 @@ header {
     color: #065f46;
     line-height: 1.6;
 }
+
 /*Fim  da sessão sobre o projeto*/
 
 /*Inicio da Section 2 */
@@ -239,6 +250,7 @@ header {
     text-align: center;
     padding: 3em;
     gap: 10em;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -297,6 +309,14 @@ header {
 
 .Eletrônicos a {
     color: #2E7D32;
+}
+
+.Outros {
+    background-color: #9e8c6d;
+}
+
+.Outros a {
+    color: white;
 }
 
 /*Fim da Section 2*/
@@ -386,7 +406,7 @@ span {
     height: 35rem;
     display: flex;
     justify-content: center;
-    
+
 }
 
 .chamada {
@@ -449,11 +469,11 @@ footer img {}
 }
 
 .links ul a {
-    color: 	#a7f3d0;
+    color: #a7f3d0;
 }
 
 .links ul a:hover {
-     color: #ffffff;
+    color: #ffffff;
 }
 
 .rapidos ul {
@@ -464,4 +484,36 @@ footer img {}
 .sociais ul {
     display: flex;
     gap: 3em;
+}
+
+@media (max-width: 844px) {
+    #menu {
+        display: flex;
+    }
+
+    #itens ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .containerPlaneta {
+        display: none;
+    }
+
+
+    .home {
+        border: 1px solid red;
+        padding: 5em;
+        overflow: none;
+        animation: none;
+        opacity: 1;
+        display: flex;
+    }
+
+    .home h1 {
+        font-size: 1.3em;
+    }
 }
