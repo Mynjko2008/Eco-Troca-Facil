@@ -43,7 +43,7 @@ header.scrolled {
 
 /* Animação de deslizamento */
 /* A animação faz com que o cabeçalho deslize para baixo quando a página é carregada */
-@keyframes slide { 
+@keyframes slide {
     from {
         transform: translateY(-100%);
         opacity: 0;
@@ -237,6 +237,7 @@ header.scrolled {
     width: 100%;
     height: 30rem;
     background-color: #F5F5F5;
+
 }
 
 .containerCategorias h1 {
@@ -336,10 +337,9 @@ header.scrolled {
 }
 
 .itens {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-    /*O auto-fit é um valor especial que detecta automaticamente quantas colunas cabem dentro do container.
-Ele ajusta o número de colunas com base no espaço disponível. 1fr → Tamanho máximo (cada coluna pode crescer até ocupar o espaço disponível proporcionalmente).*/
+    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr)); /*O auto-fit é um valor especial que detecta automaticamente quantas colunas cabem dentro do container. Ele ajusta o número de colunas com base no espaço disponível. 1fr → Tamanho máximo (cada coluna pode crescer até ocupar o espaço disponível proporcionalmente).*/
     gap: 2em;
     padding: 5em 0 0 9em;
 }
@@ -486,34 +486,151 @@ footer img {}
     gap: 3em;
 }
 
-@media (max-width: 844px) {
-    #menu {
-        display: flex;
+/* ========== SMARTPHONES (max-width: 768px) ========== */
+@media (max-width: 768px) {
+
+    /* Ajustes gerais */
+    html {
+        font-size: 15px;
     }
 
-    #itens ul {
-        display: flex;
+    .dashboard h1 {
+        font-size: 2rem;
+    }
+
+    .dashboard p {
+        font-size: 1rem;
+        margin: 20px;
+    }
+
+    .painel {
         flex-direction: column;
         align-items: center;
+    }
+
+    /* HEADER: Logo e hambúrguer na mesma linha */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem 5%;
+    }
+
+    /* Menu hambúrguer visível */
+    .hamburguer {
+        display: block;
+    }
+
+    /* Menu lateral */
+    .menu-admin {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 85%;
+        height: 100vh;
+        background: #264653;
+        flex-direction: column;
         justify-content: center;
-        
+        transition: right 0.3s ease;
+        padding-top: 80px;
     }
 
-    .containerPlaneta {
-        display: none;
+    .menu-admin.active {
+        right: 0;
     }
 
-
-    .home {
-        border: 1px solid red;
-        padding: 5em;
-        overflow: none;
-        animation: none;
-        opacity: 1;
-        display: flex;
+    .menu-admin ul {
+        flex-direction: column;
+        gap: 2.5rem;
     }
 
-    .home h1 {
-        font-size: 1.3em;
+    .admin-icon i {
+        font-size: 1.8rem;
     }
+}
+
+/* ========== TABLETS (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* Ajustes gerais */
+    html {
+        font-size: 16px;
+    }
+
+    .dashboard h1 {
+        font-size: 2.25rem;
+    }
+
+    .painel {
+        justify-content: space-around;
+    }
+
+    /* HEADER: Logo e hambúrguer na mesma linha */
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    /* Menu hambúrguer visível */
+    .hamburguer {
+        display: block;
+    }
+
+    /* Menu lateral */
+    .menu-admin {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100vh;
+        background: #264653;
+        flex-direction: column;
+        justify-content: center;
+        transition: right 0.3s ease;
+        padding-top: 80px;
+    }
+
+    .menu-admin.active {
+        right: 0;
+    }
+
+    .menu-admin ul {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .admin-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+/* ========== TELAS GRANDES (desktops maiores) ========== */
+@media (min-width: 1280px) {
+    html {
+        font-size: 17px;
+    }
+
+    .dashboard {
+        padding: 10vh 15vw;
+    }
+
+    .dashboard h1 {
+        font-size: 3.5rem;
+    }
+
+    .btn-admin {
+        font-size: 1.1rem;
+    }
+}
+
+/* ANIMAÇÃO DO BOTÃO */
+.hamburguer.active .bar:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburguer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
 }
