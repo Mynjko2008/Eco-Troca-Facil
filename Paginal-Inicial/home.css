@@ -43,7 +43,7 @@ header.scrolled {
 
 /* Animação de deslizamento */
 /* A animação faz com que o cabeçalho deslize para baixo quando a página é carregada */
-@keyframes slide {
+@keyframes slide { 
     from {
         transform: translateY(-100%);
         opacity: 0;
