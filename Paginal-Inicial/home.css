@@ -110,7 +110,7 @@ header.scrolled {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 50rem;
+    height: 55em;
 }
 
 .containerHome h1 {
@@ -459,7 +459,7 @@ footer {
     color: #fff;
 }
 
-footer img {}
+/*footer img {}*/
 
 .links {
     display: flex;
@@ -496,24 +496,112 @@ footer img {}
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        
     }
 
     .containerPlaneta {
         display: none;
+        padding: 0;
+        transform: none;
+        left: 0;
+        animation: none;
     }
 
 
     .home {
-        border: 1px solid red;
-        padding: 5em;
-        overflow: none;
-        animation: none;
-        opacity: 1;
+        padding: 3em;
+        overflow: hidden;
+        opacity: 0;
         display: flex;
+        width: 100%;
+        text-align: center;
+        flex-direction: column;
+        animation: fadeTexto 1.2s ease forwards;
+        animation-delay: 0.8s;
+    }
+
+    @keyframes fadeTexto {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     .home h1 {
-        font-size: 1.3em;
+        font-size: 2.4em;
+    }
+
+    .home h2 {
+        font-size: 1.4em;
+    }
+
+    .containerCategorias {
+        width: 100vw;
+        /* garante que ocupa 100% da largura */
+        height: auto;
+        overflow-x: hidden;
+        /* Esconde qualquer conteúdo que ultrapassar a largura (horizontalmente). */
+        padding: 0;
+    }
+
+    .containerCategorias h1 {
+        text-align: center;
+        font-size: 1.6em;
+        padding: 1em 1em 0 1em;
+    }
+
+    .categorias {
+        display: flex;
+        flex-wrap: nowrap;
+        /* Impede que os cards quebrem para a linha de baixo. */
+        overflow-x: auto;
+        /* Ativa o scroll horizontal se os cards ultrapassarem a tela. */
+        gap: 1em;
+        scroll-snap-type: x mandatory;
+        /* Faz os cards "encaixarem" como um carrossel ao rolar. */
+        scroll-behavior: smooth;
+        padding: 1em 0 2em 1em;
+        /* só padding à esquerda */
+    }
+
+    .card {
+        flex: 0 0 auto;
+        /* Não cresce, nem encolhe. Mantém o tamanho fixo. */
+        min-width: 160px;
+        scroll-snap-align: start;
+        /* Faz o card alinhar certinho no início quando o usuário rolar. */
+        border-radius: 10px;
+        padding: 1em;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .card a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        gap: 0.5em;
+    }
+
+    .categorias::-webkit-scrollbar {
+        display: none;
+        /* Esconde a barra de rolagem horizontal no Chrome/Safari. */
+    }
+
+    .containerDestaque {
+        padding: 1em;
+        height: 65em;
+    }
+
+    .itens {
+        grid-template-columns: repeat(2, 1fr); /* 2 por linha no mobile */
+        padding: 0;
+        
+    }
+
+    .box {
+        width: 10em;
+        height: 16em;
     }
 }
