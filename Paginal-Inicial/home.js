@@ -28,7 +28,7 @@ boxes.forEach(box => {observar.observe(box);}); //pense no => no seu código com
   });
 
 
-  function clickMenu() { 
+  function clickMenu() {
     if (itens.style.display == 'block') {
         itens.style.display = 'none'
     } else {
