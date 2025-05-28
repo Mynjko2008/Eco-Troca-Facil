@@ -1,0 +1,197 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+    background-color: #F6F7F8;
+    color: #1C1C1C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+form {
+    background-color: #FFFFFF;
+    padding: 2em;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Form Heading */
+form h2 {
+    color: #0E5E4D;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+form p {
+    color: #388E3C;
+    margin-bottom: 1.5em;
+}
+
+/* Labels */
+form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 0.5em;
+    color: #1C1C1C;
+    font-weight: bold;
+}
+
+/* Inputs */
+form input[type="email"],
+form input[type="password"] {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    border: 1px solid #ABCCC2;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #1C1C1C;
+}
+
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #0E5E4D;
+    outline: none;
+}
+
+/* Submit Button */
+form input[type="submit"] {
+    background-color: #0E5E4D;
+    color: #FFFFFF;
+    padding: 0.8em 2em;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+form input[type="submit"]:hover {
+    background-color: #094236;
+    transform: scale(1.05);
+}
+
+/* Link to Register */
+.cadastro-link {
+    margin-top: 1em;
+    display: block;
+    color: #2B6CB0;
+    font-size: 0.9em;
+    transition: color 0.3s ease;
+}
+
+.cadastro-link:hover {
+    color: #094236;
+}
+
+/* ========== SMARTPHONES (max-width: 768px) ========== */
+@media (max-width: 768px) {
+    /* Ajustes gerais */
+    html {
+        font-size: 15px;
+    }
+
+    form h2 {
+        font-size: 1.8rem;
+    }
+
+    form p {
+        font-size: 1rem;
+        margin: 20px 0;
+    }
+
+    form {
+        padding: 1.5em;
+        width: 90%;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        padding: 0.7em;
+        font-size: 0.9em;
+    }
+
+    form input[type="submit"] {
+        padding: 0.7em 1.5em;
+        font-size: 0.9em;
+    }
+
+    .cadastro-link {
+        font-size: 0.8em;
+    }
+}
+
+/* ========== TABLETS (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Ajustes gerais */
+    html {
+        font-size: 16px;
+    }
+
+    form h2 {
+        font-size: 2rem;
+    }
+
+    form p {
+        font-size: 1.1rem;
+    }
+
+    form {
+        padding: 2em;
+        width: 80%;
+        max-width: 450px;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+        font-size: 1em;
+    }
+
+    form input[type="submit"] {
+        font-size: 1em;
+    }
+
+    .cadastro-link {
+        font-size: 0.85em;
+    }
+}
+
+/* ========== TELAS GRANDES (desktops maiores) ========== */
+@media (min-width: 1280px) {
+    html {
+        font-size: 17px;
+    }
+
+    form {
+        padding: 2.5em;
+        max-width: 500px;
+    }
+
+    form h2 {
+        font-size: 2.5rem;
+    }
+
+    form input[type="submit"] {
+        font-size: 1.1rem;
+    }
+
+    .cadastro-link {
+        font-size: 0.9em;
+    }
+}

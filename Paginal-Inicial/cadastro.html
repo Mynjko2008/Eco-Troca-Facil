@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Troca Fácil | Oficial</title>
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="">
+        <h2>Cadastre-se</h2>
+        <p>Crie sua conta para começar a trocar!</p>
+
+        <label for="input-nome">Nome Completo</label>
+        <input type="text" id="input-nome" name="input-nome" placeholder="Insira seu nome completo" required>
+
+        <label for="input-email">Email</label>
+        <input type="email" id="input-email" name="input-email" placeholder="Insira seu e-mail" required>
+        <label for="estado">Qual o Seu Estado?</label>
+        <select id="estado" name="estado">
+            <option value="" disabled selected>Selecione um estado</option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espírito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+
+        <label for="input-senha">Senha</label>
+        <input type="password" id="input-senha" name="input-senha" placeholder="Crie uma senha" required>
+
+        <label for="input-confirmar-senha">Confirmar Senha</label>
+        <input type="password" id="input-confirmar-senha" name="input-confirmar-senha" placeholder="Confirme sua senha"
+            required>
+
+        <input type="submit" value="Cadastrar" class="btn-form">
+
+        <a href="login.html" class="login-link">
+            <p>Já Possui Uma Conta? Clique Aqui</p>
+        </a>
+
+    </form>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

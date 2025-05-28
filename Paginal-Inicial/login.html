@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Troca Fácil | Oficial</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <form action="">
+        <h2> Bem Vindo(a) de Volta </h2>
+        <p> Planeje Sua Sua Próxima Troca! </p>
+
+        <label for="input-email">Email</label>
+        <input type="email" class="input-email dombosco" id="input-email" name="input-email"
+            placeholder="Insira seu e-mail" required> <br>
+
+        <label for="input-passaword">Senha</label>
+        <input type="password" class="input-passaword dombosco" id="input-passaword" name="input-passaword"
+            placeholder="Digita sua senha" required> <br>
+
+        <input type="submit" value="Entrar" class="btn-form">
+
+        <a href="cadastro.html" class="cadastro-link">
+            <p>Não Possui Login? Clique aqui</p>
+        </a>
+    </form>
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+    <script src="login.js"></script>
+</body>
+
+</html>
