@@ -491,34 +491,42 @@ footer {
         display: flex;
     }
 
+    .navegacao ul {
+        display: none;
+    }
+
     #itens ul {
         display: flex;
+    }
+
+
+    #itens ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
+    }
+
+    .containerHome {
+        height: 30em;
     }
 
     .containerPlaneta {
         display: none;
-        padding: 0;
-        transform: none;
-        left: 0;
-        animation: none;
     }
 
 
     .home {
-        padding: 3em;
-        overflow: hidden;
+        padding: 2em;
+        overflow: none;
+        animation: none;
         opacity: 0;
+        /* começa invisível até animar */
         display: flex;
-        width: 100%;
-        text-align: center;
         flex-direction: column;
-        animation: fadeTexto 1.2s ease forwards;
-        animation-delay: 0.8s;
+        text-align: center;
+        animation-delay: 1s;
+        animation: fadeTexto 1.5s ease forwards;
     }
 
     @keyframes fadeTexto {
@@ -529,111 +537,93 @@ footer {
     }
 
     .home h1 {
-        font-size: 2.4em;
+        font-size: 1.9em;
     }
 
     .home h2 {
-        font-size: 1.4em;
-    }
-
-    .containerCategorias {
-        width: 100vw;
-        /* garante que ocupa 100% da largura */
-        height: auto;
-        overflow-x: hidden;
-        /* Esconde qualquer conteúdo que ultrapassar a largura (horizontalmente). */
-        padding: 0;
+        font-size: 1.2em;
     }
 
     .containerCategorias h1 {
+        font-size: 2.2em;
         text-align: center;
-        font-size: 1.6em;
-        padding: 1em 1em 0 1em;
     }
 
     .categorias {
-        display: flex;
         flex-wrap: nowrap;
-        /* Impede que os cards quebrem para a linha de baixo. */
         overflow-x: auto;
-        /* Ativa o scroll horizontal se os cards ultrapassarem a tela. */
-        gap: 1em;
         scroll-snap-type: x mandatory;
-        /* Faz os cards "encaixarem" como um carrossel ao rolar. */
         scroll-behavior: smooth;
         padding: 1em 0 2em 1em;
-        /* só padding à esquerda */
+        gap: 1em;
     }
 
     .card {
         flex: 0 0 auto;
-        /* Não cresce, nem encolhe. Mantém o tamanho fixo. */
         min-width: 160px;
         scroll-snap-align: start;
-        /* Faz o card alinhar certinho no início quando o usuário rolar. */
+        /*O scroll-snap-align diz como o item deve se "encaixar" no contêiner pai quando a rolagem para.*/
         border-radius: 10px;
         padding: 1em;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         text-align: center;
     }
 
-    .card a {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-decoration: none;
-        color: inherit;
-        gap: 0.5em;
-    }
-
     .categorias::-webkit-scrollbar {
         display: none;
-        /* Esconde a barra de rolagem horizontal no Chrome/Safari. */
     }
 
     .containerDestaque {
-        padding: 1em;
+        padding: 0;
         height: 65em;
     }
 
+    .containerDestaque h1 {
+        font-size: 2em;
+    }
+
     .itens {
-        grid-template-columns: repeat(2, 1fr); /* 2 por linha no mobile */
-        padding: 0;
-        
+        align-items: center;
+        justify-content: center;
+    }
+
+    .box:nth-child(n+4) {
+        /*nth-child() é uma função do CSS que permite selecionar elementos com base na sua ordem.*/
+        display: none;
+        /* esconde do 4º em diante */
     }
 
     .box {
-        width: 10em;
-        height: 16em;
-=======
-        transition: right 0.3s ease;
-        padding-top: 80px;
-=======
-        
->>>>>>> bc0074c307d489aec6028a19ceef1d9bf769096a
+        height: 15em;
     }
 
-    .containerPlaneta {
-        display: none;
+    .titulo {
+        font-size: 2em;
     }
 
+    .containerChamada {
+        height: 25em;
+    }
 
-    .home {
-        border: 1px solid red;
-        padding: 5em;
-        overflow: none;
-        animation: none;
-        opacity: 1;
+    .containerChamada p {
+        font-size: 1.1em;
+        padding: 2em;
+    }
+
+    footer {
+        padding: 1em;
+        text-align: center;
+    }
+
+    footer h3 {
+        padding: 1em;
+    }
+
+    .links {
         display: flex;
-    }
-
-<<<<<<< HEAD
-    .admin-icon i {
-        font-size: 1.8rem;
->>>>>>> 68e44ee9bd5b6c2a969c32cb605232e791fa25f3
-=======
-    .home h1 {
-        font-size: 1.3em;
->>>>>>> bc0074c307d489aec6028a19ceef1d9bf769096a
+        flex-direction: column;
+        gap: 1em;
+        font-size: 1em;
+        align-items: center;
     }
 }
