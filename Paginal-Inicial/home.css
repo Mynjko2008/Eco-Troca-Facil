@@ -235,7 +235,7 @@ header.scrolled {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 30rem;
+    height: auto;
     background-color: #F5F5F5;
 }
 
@@ -324,8 +324,8 @@ header.scrolled {
 /*Inicio da Section 3*/
 .containerDestaque {
     width: 100%;
-    height: 50rem;
-    padding: 0 15em;
+    height: auto;
+    padding: 0 15em 5em;
     text-align: center;
 }
 
@@ -394,6 +394,7 @@ span {
 
 /*Fim da Section 3*/
 
+/*Inicio da Section 4*/
 .sustentabilidadeImg {
     background: linear-gradient(180deg, #e6f4ea4f, #d0e8d031), url(img/Fundo_sustentabilidade.png);
     background-position: center center;
@@ -448,6 +449,9 @@ span {
     text-transform: uppercase;
 }
 
+/*Fim da Section 4*/
+
+/*Inicio do Roda pe*/
 footer {
     display: flex;
     flex-direction: column;
@@ -486,6 +490,9 @@ footer {
     gap: 3em;
 }
 
+/*Fim do Roda pe*/
+
+/* ======== CELULAR: até 844px ======== */
 @media (max-width: 844px) {
     #menu {
         display: flex;
@@ -544,6 +551,7 @@ footer {
         font-size: 1.2em;
     }
 
+
     .containerCategorias h1 {
         font-size: 2.2em;
         text-align: center;
@@ -554,7 +562,6 @@ footer {
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         scroll-behavior: smooth;
-        padding: 1em 0 2em 1em;
         gap: 1em;
     }
 
@@ -589,7 +596,7 @@ footer {
 
     .box:nth-child(n+4) {
         /*nth-child() é uma função do CSS que permite selecionar elementos com base na sua ordem.*/
-        display: none;
+        display: none !important;
         /* esconde do 4º em diante */
     }
 
@@ -626,4 +633,69 @@ footer {
         font-size: 1em;
         align-items: center;
     }
+}
+
+/* ========== TABLETS (845px - 1024px) ========== */
+@media (min-width: 845px) and (max-width: 1024px) {
+    .containerPlaneta {
+        display: none;
+    }
+
+    .categorias {
+        justify-content: center;
+    }
+
+    .home {
+        padding: 2em;
+        overflow: none;
+        animation: none;
+        opacity: 0;
+        /* começa invisível até animar */
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        animation-delay: 1s;
+        animation: fadeTexto 1.5s ease forwards;
+    }
+
+    .containerDestaque {
+        padding: 0 2em;
+        height: auto;
+    }
+
+    .itens {
+        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
+        gap: 1.5em;
+        justify-content: center;
+        padding-bottom: 2em;
+    }
+
+    .box {
+        display: block !important;
+    }
+
+    footer {
+        padding: 1em;
+        text-align: center;
+    }
+
+    footer h3 {
+        padding: 1em;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        font-size: 1em;
+        align-items: center;
+    }
+
+}
+
+/* ======== DESKTOP: acima de 1024px ======== */
+@media (min-width: 1025px) {
+  .box {
+    display: block;
+  }
 }
