@@ -66,6 +66,10 @@ header.scrolled {
     align-items: center;
 }
 
+.navegacao img {
+    width: 3.5em;
+}
+
 .navegacao ul {
     display: flex;
     gap: 1.5em;
@@ -461,6 +465,10 @@ footer {
     background-color: #065f46;
     /* Verde escuro */
     color: #fff;
+}
+
+footer img {
+    width: 3em;
 }
 
 /*footer img {}*/
