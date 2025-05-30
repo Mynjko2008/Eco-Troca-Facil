@@ -13,22 +13,31 @@
     <!--Inico do header-->
     <header>
         <div class="navegacao">
-            <img src="img/Logo-branca.png" alt="Logo">
-            <i class="fa-solid fa-bars" id="menu"  onclick="clickMenu()"></i>
+            <div class="logo">
+                <a href="#Home">
+                    <img src="img/Logo-branca.png" alt="Logo">
+                </a>
+                <a href="">
+                    <h3><span>Eco</span>Troca</h3>
+                </a>
+
+            </div>
+
+            <i class="fa-solid fa-bars" id="menu" onclick="clickMenu()"></i>
             <nav id="itens">
                 <ul>
                     <li>
-                        <a href="">Início</a>
+                        <a href="#Home">Início</a>
                     </li>
                     <li>
-                        <a href="">Categorias</a>
+                        <a href="#Categorias">Categorias</a>
                     </li>
                     <li>
-                        <a href="">Sobre</a>
+                        <a href="#Sobre">Sobre</a>
                     </li>
                     <li>
 
-                        <a href="">
+                        <a href="login.html">
                             <button class="btn-1">Entrar</button>
                         </a>
 
@@ -43,14 +52,14 @@
     <main>
         <!--Inicio da home-->
         <section>
-            <div class="containerHome">
+            <div class="containerHome" id="Home">
                 <div class="containerPlaneta">
                     <img src="img/Mundo.png" alt="Mundo" loading="lazy" class="planeta">
                 </div>
                 <div class="home">
                     <h1>Troque, doe e ajude o planeta</h1>
                     <h2>Dê um novo destino para objetos que você não usa mais e pratique o consumo consciente.</h2>
-                    <a href="">
+                    <a href="login.html">
                         <button class="btn-2">Começar agora</button>
                     </a>
                 </div>
@@ -60,7 +69,7 @@
 
         <!-- Inicio da sessão sobre o projeto-->
         <section class="sobre">
-            <div class="containerSobre">
+            <div class="containerSobre" id="Sobre">
                 <h2>Sobre o projeto</h2>
                 <p>Este site nasceu com o propósito de facilitar a troca e a doação de itens usados. Acreditamos que,
                     juntos, podemos combater o desperdício e promover a sustentabilidade por meio da economia circular.
@@ -71,7 +80,7 @@
 
         <!-- Inicio da sessão Categorias-->
         <section>
-            <div class="containerCategorias">
+            <div class="containerCategorias" id="Categorias">
                 <h1>O que você quer doar ou trocar hoje?</h1>
                 <div class="categorias">
                     <div class="card Livros">
@@ -111,7 +120,7 @@
 
         <!-- Inicio da sessão Itens Recentes-->
         <section>
-            <div class="containerDestaque">
+            <div class="containerDestaque" id="Destaques">
                 <h1>Últimos Registros</h1>
                 <div class="itens">
                     <div class="box">
@@ -163,7 +172,10 @@
                     <h1 class="titulo">Juntos pela sustentabilidade!</h1>
                     <p>Acreditamos no poder da economia circular. Aqui, cada doação ou troca ajuda a reduzir o
                         desperdício e a construir um futuro mais verde. Faça parte desse movimento!</p>
-                    <button class="cta">Quero participar</button>
+                    <a href="login.html">
+                        <button class="cta">Quero participar</button>
+                    </a>
+
                 </div>
             </div>
         </section>
@@ -173,20 +185,26 @@
 
     <!-- Inicio do Rodape-->
     <footer>
-        <img src="img/Logo-branca.png" alt="Logo">
-        <h3>EcoTroca</h3>
+        <div class="logo">
+            <a href="#Home">
+                <img src="img/Logo-branca.png" alt="Logo">
+            </a>
+            <a href="#Home">
+                <h3><span>Eco</span>Troca</h3>
+            </a>
+        </div>
         <p>Transformando o mundo com trocas e doações conscientes.</p>
         <div class="links">
             <div class="rapidos">
                 <ul>
                     <li>
-                        <a href="">Início</a>
+                        <a href="#Home">Início</a>
                     </li>
                     <li>
-                        <a href="">Categorias</a>
+                        <a href="#Categorias">Categorias</a>
                     </li>
                     <li>
-                        <a href="">Sobre</a>
+                        <a href="#Sobre">Sobre</a>
                     </li>
                 </ul>
             </div>

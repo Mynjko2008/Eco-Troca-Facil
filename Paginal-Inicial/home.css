@@ -23,7 +23,7 @@ section {
 header {
     background: #0E5E4D;
     /* Cor de fundo do cabeçalho */
-    padding: 2rem 5%;
+    padding: 1rem 5%;
     /* Espaçamento interno do cabeçalho */
     position: sticky;
     /* Fixa o cabeçalho no topo da página */
@@ -35,6 +35,20 @@ header {
     animation: slide 0.6s ease-out;
     /* Animação de deslizamento */
     transition: box-shadow 0.3s ease;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h3 {
+    font-size: 1.4em;
+    color: white;
+}
+
+.logo h3 span {
+    color: black;
 }
 
 header.scrolled {
@@ -67,7 +81,7 @@ header.scrolled {
 }
 
 .navegacao img {
-    width: 3.5em;
+    width: 3em;
 }
 
 .navegacao ul {
@@ -134,6 +148,7 @@ header.scrolled {
     background: #0E5E4D;
     color: #FFFFFF;
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .btn-2:hover {
@@ -439,6 +454,7 @@ span {
     color: white;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .cta:hover {
@@ -467,11 +483,22 @@ footer {
     color: #fff;
 }
 
-footer img {
-    width: 3em;
+footer .logo {
+    display: flex;
+    align-items: center;
 }
 
-/*footer img {}*/
+footer a {
+    color: white;
+}
+
+footer img {
+    width: 4em;
+}
+
+footer h3 span {
+    color: black;
+}
 
 .links {
     display: flex;
@@ -504,6 +531,15 @@ footer img {
 @media (max-width: 844px) {
     #menu {
         display: flex;
+    }
+
+
+    .navegacao .logo img {
+        width: 2.3em;
+    }
+
+    .navegacao .logo h3 {
+        font-size: 1.1em;
     }
 
     .navegacao ul {
@@ -630,10 +666,14 @@ footer img {
         text-align: center;
     }
 
-    footer h3 {
-        padding: 1em;
+    footer .logo img {
+        width: 2.8em;
     }
 
+     footer .logo h3 {
+        font-size: 1.1em;
+     }
+   
     .links {
         display: flex;
         flex-direction: column;
@@ -644,7 +684,7 @@ footer img {
 }
 
 /* ========== TABLETS (845px - 1024px) ========== */
-@media (min-width: 845px) and (max-width: 1024px) {
+@media (min-width: 845px) and (max-width: 1300px) {
     .containerPlaneta {
         display: none;
     }
@@ -652,6 +692,8 @@ footer img {
     .categorias {
         justify-content: center;
     }
+
+
 
     .home {
         padding: 2em;
@@ -685,10 +727,6 @@ footer img {
     footer {
         padding: 1em;
         text-align: center;
-    }
-
-    footer h3 {
-        padding: 1em;
     }
 
     .links {
