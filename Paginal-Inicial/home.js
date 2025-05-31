@@ -11,27 +11,28 @@ const observar = new IntersectionObserver(entries => { // Essas setas é uma fun
   });
 }, {
   threshold: 0.4 // 40% visível já dispara a animação
-  
+
 })
 
 
-boxes.forEach(box => {observar.observe(box);}); //pense no => no seu código como "execute esta função com estes parâmetros". Ele aponta para o bloco de código que será executado.
+boxes.forEach(box => { observar.observe(box); }); //pense no => no seu código como "execute esta função com estes parâmetros". Ele aponta para o bloco de código que será executado.
 
-  const header = document.getSelection('header');
+const header = document.getSelection('header');
 
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 10) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 10) {
+    header.classList.add('scrolled');
+  } else {
+    header.classList.remove('scrolled');
+  }
+});
 
+// Menu Hambúrguer
+function clickMenu() {
+  if (itens.style.display == 'block') {
+    itens.style.display = 'none'
+  } else {
+    itens.style.display = 'block'
+  }
+};
 
-  function clickMenu() {
-    if (itens.style.display == 'block') {
-        itens.style.display = 'none'
-    } else {
-      itens.style.display = 'block'
-    }
-  };

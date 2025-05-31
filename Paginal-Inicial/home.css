@@ -530,7 +530,7 @@ footer h3 span {
 /* ======== CELULAR: até 844px ======== */
 @media (max-width: 844px) {
     #menu {
-        display: flex;
+        display: block;
     }
 
 
@@ -546,17 +546,14 @@ footer h3 span {
         display: none;
     }
 
-    #itens ul {
-        display: flex;
-    }
-
 
     #itens ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-
+        display: flex;
     }
+
 
     .containerHome {
         height: 30em;
@@ -595,7 +592,6 @@ footer h3 span {
         font-size: 1.2em;
     }
 
-
     .containerCategorias h1 {
         font-size: 2.2em;
         text-align: center;
@@ -604,7 +600,7 @@ footer h3 span {
     .categorias {
         flex-wrap: nowrap;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory; /* Faz o scroll encaixar horizontalmente */
         scroll-behavior: smooth;
         gap: 1em;
     }
@@ -670,10 +666,10 @@ footer h3 span {
         width: 2.8em;
     }
 
-     footer .logo h3 {
+    footer .logo h3 {
         font-size: 1.1em;
-     }
-   
+    }
+
     .links {
         display: flex;
         flex-direction: column;
@@ -741,7 +737,7 @@ footer h3 span {
 
 /* ======== DESKTOP: acima de 1024px ======== */
 @media (min-width: 1025px) {
-  .box {
-    display: block;
-  }
+    .box {
+        display: block;
+    }
 }
