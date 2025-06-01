@@ -1,12 +1,12 @@
 /* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    text-decoration: none;
-    list-style: none;
-    scroll-behavior: smooth;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    font-family: 'Poppins', sans-serif; /* Use Poppins font */
+    text-decoration: none; /* Remove underline from links */
+    list-style: none; /* Remove bullet points from lists */
+    scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 /* Body */
@@ -69,6 +69,34 @@ form input[type="email"]:focus,
 form input[type="password"]:focus {
     border-color: #0E5E4D;
     outline: none;
+}
+
+.senha-container {
+    position: relative;
+}
+
+.senha-container .toggle-password {
+    position: absolute;
+    top: 30%;
+    right: 10px; /* Ajuste conforme o padding do input */
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form select {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    border: 1px solid #ABCCC2;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #1C1C1C;
+    background-color: #fff; /* garante fundo branco igual aos inputs */
+    appearance: none; /* remove o estilo padrão do select */
 }
 
 /* Submit Button */

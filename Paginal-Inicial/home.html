@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
     <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <title>Eco Troca Fácil | Oficial</title>
+    <link rel="shortcut icon" href="img/Logo-colorida.png" type="image/x-icon">
 </head>
 
 <body>
@@ -59,7 +60,7 @@
                 <div class="home">
                     <h1>Troque, doe e ajude o planeta</h1>
                     <h2>Dê um novo destino para objetos que você não usa mais e pratique o consumo consciente.</h2>
-                    <a href="login.html">
+                    <a href="cadastro.html">
                         <button class="btn-2">Começar agora</button>
                     </a>
                 </div>
@@ -172,7 +173,7 @@
                     <h1 class="titulo">Juntos pela sustentabilidade!</h1>
                     <p>Acreditamos no poder da economia circular. Aqui, cada doação ou troca ajuda a reduzir o
                         desperdício e a construir um futuro mais verde. Faça parte desse movimento!</p>
-                    <a href="login.html">
+                    <a href="cadastro.html">
                         <button class="cta">Quero participar</button>
                     </a>
 
@@ -211,17 +212,17 @@
             <div class="sociais">
                 <ul>
                     <li>
-                        <a href="">
+                        <a href="https://www.instagram.com/" target="_blank">
                             <i class="fa-brands fa-instagram"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.facebook.com/" target="_blank">
                             <i class="fa-brands fa-square-facebook"></i>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="https://www.youtube.com/" target="_blank">
                             <i class="fa-brands fa-youtube"></i>
                         </a>
                     </li>
@@ -232,7 +233,38 @@
     </footer>
     <!-- Fim do Rodape-->
 
+    <!-- Início do Plugin VLibras -->
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+     <!-- Script para rolagem suave entre seções -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Impede o comportamento padrão de pular diretamente
+                const targetId = this.getAttribute('href').substring(1); // Pega o ID do destino
+                const section = document.getElementById(targetId); // Seleciona o elemento com o ID
+                if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' }); // Faz a rolagem suave até a seção
+
+                    // Remove o "#" da URL sem recarregar a página
+                    history.pushState(null, null, window.location.pathname);
+                }
+            });
+        });
+    </script>    
+
     <script src="home.js"></script>
+
+
 </body>
 
 </html>

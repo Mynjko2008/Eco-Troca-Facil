@@ -1,42 +1,102 @@
-// ========== CADASTRO ==========
-if (window.location.pathname.includes("cadastro.html")) {
-    const cadastroForm = document.querySelector("form");
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    const nome = document.getElementById('input-nome');
+    const email = document.getElementById('input-email');
+    const estado = document.getElementById('estado');
+    const senha = document.getElementById('input-senha');
+    const confirmarSenha = document.getElementById('input-confirmar-senha');
+    const loginLink = document.querySelector('.login-link');
 
-    cadastroForm.addEventListener("submit", function (event) {
+    document.querySelectorAll('.toggle-password').forEach(function (icon) {
+        icon.addEventListener('click', function () {
+            const target = document.getElementById(this.dataset.target);
+            if (target.type === 'password') {
+                target.type = 'text';
+                this.classList.remove('fa-eye');
+                this.classList.add('fa-eye-slash');
+            } else {
+                target.type = 'password';
+                this.classList.remove('fa-eye-slash');
+                this.classList.add('fa-eye');
+            }
+        });
+    });
+
+
+    form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        const nome = document.getElementById("input-nome").value.trim();
-        const email = document.getElementById("input-email").value.trim();
-        const estado = document.getElementById("estado").value;
-        const senha = document.getElementById("input-senha").value;
-        const confirmarSenha = document.getElementById("input-confirmar-senha").value;
-
-        if (nome === "" || email === "" || estado === "" || senha === "" || confirmarSenha === "") {
-            alert("Por favor, preencha todos os campos!");
+        if (nome.value.trim() === '') {
+            alert('Por favor, preencha o nome completo.');
+            nome.focus();
             return;
         }
 
-        if (!validarEmail(email)) {
-            alert("Por favor, insira um email válido!");
+        if (!validarEmail(email.value)) {
+            alert('Por favor, insira um e-mail válido.');
+            email.focus();
             return;
         }
 
-        if (senha !== confirmarSenha) {
-            alert("As senhas não coincidem!");
+        if (estado.value === '') {
+            alert('Por favor, selecione um estado.');
+            estado.focus();
             return;
         }
 
-        // Aqui poderia ser uma chamada AJAX ou Fetch para o backend
-        console.log("Cadastro realizado com sucesso!");
-        alert("Cadastro realizado com sucesso!");
+        const senhaValor = senha.value;
 
-        // Redirecionamento simulado
-        window.location.href = "login.html";
+        // Validação da senha
+        if (senhaValor.length < 8) {
+            alert('A senha deve ter pelo menos 8 caracteres.');
+            senha.focus();
+            return;
+        }
+
+        if (!/[A-Z]/.test(senhaValor)) {
+            alert('A senha deve conter pelo menos uma letra MAIÚSCULA.');
+            senha.focus();
+            return;
+        }
+
+        if (!/[a-z]/.test(senhaValor)) {
+            alert('A senha deve conter pelo menos uma letra minúscula.');
+            senha.focus();
+            return;
+        }
+
+        if (!/[0-9]/.test(senhaValor)) {
+            alert('A senha deve conter pelo menos um número.');
+            senha.focus();
+            return;
+        }
+
+        if (!/[!@#$%^&*(),.?":{}|<>_\-+=/\\[\]]/.test(senhaValor)) {
+            alert('A senha deve conter pelo menos um caractere especial.');
+            senha.focus();
+            return;
+        }
+
+        if (senhaValor !== confirmarSenha.value) {
+            alert('As senhas não coincidem.');
+            confirmarSenha.focus();
+            return;
+        }
+
+        alert('Cadastro realizado com sucesso! Redirecionando para a tela de login...');
+
+        setTimeout(function () {
+            window.location.href = 'login.html';
+        }, 1500);
     });
 
     function validarEmail(email) {
-        // Expressão regular simples para validar email
-        const re = /\S+@\S+\.\S+/;
-        return re.test(email);
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
     }
-}
+
+    loginLink.addEventListener('click', function (event) {
+        event.preventDefault();
+        window.location.href = 'login.html';
+    });
+});

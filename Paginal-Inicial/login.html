@@ -7,6 +7,7 @@
     <title>Eco Troca Fácil | Oficial</title>
     <link rel="stylesheet" href="login.css">
     <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/Logo-colorida.png" type="image/x-icon">
 </head>
 
 <body>
@@ -20,8 +21,12 @@
             placeholder="Insira seu e-mail" required> <br>
 
         <label for="input-passaword">Senha</label>
-        <input type="password" class="input-passaword dombosco" id="input-passaword" name="input-passaword"
-            placeholder="Digita sua senha" required> <br>
+        <div class="senha-container">
+            <input type="password" class="input-passaword dombosco" id="input-passaword" name="input-passaword"
+                placeholder="Digite sua senha" required>
+            <i class="fa-solid fa-eye toggle-password" data-target="input-passaword"></i>
+        </div>
+
 
         <input type="submit" value="Entrar" class="btn-form">
 

@@ -7,6 +7,7 @@
     <title>Eco Troca Fácil | Oficial</title>
     <link rel="stylesheet" href="cadastro.css">
     <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/Logo-colorida.png" type="image/x-icon">
 </head>
 
 <body>
@@ -52,11 +53,17 @@
         </select>
 
         <label for="input-senha">Senha</label>
-        <input type="password" id="input-senha" name="input-senha" placeholder="Crie uma senha" required>
+        <div class="senha-container">
+            <input type="password" id="input-senha" name="input-senha" placeholder="Crie uma senha" required>
+            <i class="fa-solid fa-eye toggle-password" data-target="input-senha"></i>
+        </div>
 
         <label for="input-confirmar-senha">Confirmar Senha</label>
-        <input type="password" id="input-confirmar-senha" name="input-confirmar-senha" placeholder="Confirme sua senha"
-            required>
+        <div class="senha-container">
+            <input type="password" id="input-confirmar-senha" name="input-confirmar-senha"
+                placeholder="Confirme sua senha" required>
+            <i class="fa-solid fa-eye toggle-password" data-target="input-confirmar-senha"></i>
+        </div>
 
         <input type="submit" value="Cadastrar" class="btn-form">
 
@@ -77,7 +84,7 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-    <script src="login.js"></script>
+    <script src="cadastro.js"></script>
 </body>
 
 </html>

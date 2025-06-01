@@ -109,6 +109,8 @@ header.scrolled {
 }
 
 .btn-1:hover {
+    color: white;
+    background: #44BBA4;
     transform: scale(1.05);
 }
 
@@ -527,8 +529,8 @@ footer h3 span {
 
 /*Fim do Roda pe*/
 
-/* ======== CELULAR: até 844px ======== */
-@media (max-width: 844px) {
+/* ========== SMARTPHONES (max-width: 768px) ========== */
+@media (max-width: 768px) {
     #menu {
         display: block;
     }
@@ -679,8 +681,8 @@ footer h3 span {
     }
 }
 
-/* ========== TABLETS (845px - 1024px) ========== */
-@media (min-width: 845px) and (max-width: 1300px) {
+/* ========== TABLETS (769px - 1024px) ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
     .containerPlaneta {
         display: none;
     }
@@ -735,8 +737,8 @@ footer h3 span {
 
 }
 
-/* ======== DESKTOP: acima de 1024px ======== */
-@media (min-width: 1025px) {
+/* ======== DESKTOP: acima de 1280px ======== */
+@media (min-width: 1280px) {
     .box {
         display: block;
     }

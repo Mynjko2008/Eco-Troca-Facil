@@ -69,6 +69,35 @@ form input[type="password"]:focus {
     outline: none;
 }
 
+.senha-container {
+    position: relative;
+    width: 100%;
+}
+
+.senha-container input[type="password"],
+.senha-container input[type="text"] {
+    width: 100%;
+    padding: 0.8em;
+    padding-right: 2.5em; /* espaço extra para o ícone */
+    margin-bottom: 1.5em;
+    border: 1px solid #ABCCC2;
+    border-radius: 10px;
+    font-size: 1em;
+    color: #1C1C1C;
+    box-sizing: border-box; /* Garante que o padding não expanda a largura */
+}
+
+.senha-container .toggle-password {
+    position: absolute;
+    top: 30%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
+
+
 /* Submit Button */
 form input[type="submit"] {
     background-color: #0E5E4D;
