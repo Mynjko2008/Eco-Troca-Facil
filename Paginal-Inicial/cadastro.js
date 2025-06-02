@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (senhaValor.length > 15) {
+            alert('A senha não pode ter mais que 15 caracteres.');
+            senha.focus();
+            return;
+        }
+
         if (!/[A-Z]/.test(senhaValor)) {
             alert('A senha deve conter pelo menos uma letra MAIÚSCULA.');
             senha.focus();
@@ -91,8 +97,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function validarEmail(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
+         // Cria uma expressão regular (Regex) para validar o formato do e-mail.
+        // ^ -> início da string
+        // [^\s@]+ -> um ou mais caracteres que NÃO sejam espaço (\s) ou @
+        // @ -> obrigatório ter um "@" depois
+        // [^\s@]+ -> novamente, um ou mais caracteres que NÃO sejam espaço ou @ (parte do domínio)
+        // \. -> o ponto literal, separando o domínio da extensão (ex: ".com")
+        // [^\s@]+ -> a extensão deve ter um ou mais caracteres, sem espaço ou @
+        // $ -> fim da string
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
     }
 
     loginLink.addEventListener('click', function (event) {
