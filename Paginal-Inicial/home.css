@@ -737,8 +737,8 @@ footer h3 span {
 
 }
 
-/* ======== DESKTOP: acima de 1280px ======== */
-@media (min-width: 1280px) {
+/* ======== DESKTOP: acima de 1025px ======== */
+@media (min-width: 1025px) {
     .box {
         display: block;
     }

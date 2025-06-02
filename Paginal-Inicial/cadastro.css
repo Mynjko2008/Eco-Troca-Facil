@@ -204,8 +204,8 @@ form input[type="submit"]:hover {
     }
 }
 
-/* ========== TELAS GRANDES (desktops maiores) ========== */
-@media (min-width: 1280px) {
+/* ======== DESKTOP: acima de 1025px ======== */
+@media (min-width: 1025px) {
     html {
         font-size: 17px;
     }
