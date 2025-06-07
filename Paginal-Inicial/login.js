@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Se tudo estiver certo
         alert('Login realizado com sucesso!');
         // Redireciona para a página de troca (preencha o link correto)
-        window.location.href = 'troca.html';  
+        window.location.href = 'cadastroitens.html';  
     });
 
     // Redirecionamento ao clicar no link de cadastro
