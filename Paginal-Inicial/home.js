@@ -29,6 +29,11 @@ window.addEventListener('scroll', () => {
 
 // Menu Hambúrguer
 function clickMenu() {
+
+  const ul = document.querySelector('#itens ul');
+  ul.classList.toggle('show');
+  
+
   if (itens.style.display == 'block') {
     itens.style.display = 'none'
   } else {

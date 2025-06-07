@@ -533,8 +533,9 @@ footer h3 span {
 @media (max-width: 768px) {
     #menu {
         display: block;
+        position: absolute;
+        right: 1em;
     }
-
 
     .navegacao .logo img {
         width: 2.3em;
@@ -544,18 +545,35 @@ footer h3 span {
         font-size: 1.1em;
     }
 
-    .navegacao ul {
-        display: none;
-    }
-
-
     #itens ul {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        display: flex;
+        background-color: #0E5E4D;
+        /* ou outra cor de fundo */
+        width: 100%;
+        padding: 1em;
+        position: absolute;
+        top: 100%;
+        /* colado embaixo do menu */
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        z-index: 100;
+
+        /* Transição suave */
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.9s ease, opacity 0.9s ease;
     }
 
+    #itens ul.show {
+        display: flex;
+        /* só aparece quando tiver a classe "show" */
+        max-height: 500px;
+        /* valor grande o suficiente pro conteúdo caber */
+        opacity: 1;
+    }
 
     .containerHome {
         height: 30em;
@@ -564,7 +582,6 @@ footer h3 span {
     .containerPlaneta {
         display: none;
     }
-
 
     .home {
         padding: 2em;
@@ -602,7 +619,8 @@ footer h3 span {
     .categorias {
         flex-wrap: nowrap;
         overflow-x: auto;
-        scroll-snap-type: x mandatory; /* Faz o scroll encaixar horizontalmente */
+        scroll-snap-type: x mandatory;
+        /* Faz o scroll encaixar horizontalmente */
         scroll-behavior: smooth;
         gap: 1em;
     }
