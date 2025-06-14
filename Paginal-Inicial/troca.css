@@ -52,20 +52,20 @@ form label {
 
 /* Inputs */
 form input[type="text"],
-form input[type="email"],
-form input[type="password"] {
-    width: 100%;
+form select {
+     width: 100%;
     padding: 0.8em;
     margin-bottom: 1.5em;
     border: 1px solid #ABCCC2;
     border-radius: 10px;
     font-size: 1em;
     color: #1C1C1C;
+    background-color: #fff; /* garante fundo branco igual aos inputs */
+    appearance: none; /* remove o estilo padrão do select */
 }
 
 form input[type="text"]:focus,
-form input[type="email"]:focus,
-form input[type="password"]:focus {
+form select:focus {
     border-color: #0E5E4D;
     outline: none;
 }
