@@ -32,7 +32,7 @@ function clickMenu() {
 
   const ul = document.querySelector('#itens ul');
   ul.classList.toggle('show');
-  
+
 
   if (itens.style.display == 'block') {
     itens.style.display = 'none'
@@ -41,3 +41,15 @@ function clickMenu() {
   }
 };
 
+
+// Verificar se está em mobile
+if (window.innerWidth <= 768) {
+  const swiper = new Swiper('.mySwiperCategorias', {
+    slidesPerView: 2,
+    spaceBetween: 20,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}

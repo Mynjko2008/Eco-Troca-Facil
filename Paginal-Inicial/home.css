@@ -529,6 +529,18 @@ footer h3 span {
 
 /*Fim do Roda pe*/
 
+.mySwiperCategorias {
+    width: 100%;
+    padding: 1em 0 0 5em;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /* ========== SMARTPHONES (max-width: 768px) ========== */
 @media (max-width: 768px) {
     #menu {
@@ -623,6 +635,17 @@ footer h3 span {
         /* Faz o scroll encaixar horizontalmente */
         scroll-behavior: smooth;
         gap: 1em;
+    }
+
+    .mySwiperCategorias {
+        width: 100%;
+        padding: 1em 0;
+    }
+
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .card {

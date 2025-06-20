@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="home.css">
     <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="../JS/carrossel.js" defer></script>
     <title>Eco Troca Fácil | Oficial</title>
     <link rel="shortcut icon" href="img/Logo-colorida.png" type="image/x-icon">
 </head>
@@ -83,36 +85,50 @@
         <section>
             <div class="containerCategorias" id="Categorias">
                 <h1>O que você quer doar ou trocar hoje?</h1>
-                <div class="categorias">
-                    <div class="card Livros">
-                        <a href="">
-                            <i class="fa-solid fa-book"></i>
-                            <p>Livros</p>
-                        </a>
-                    </div>
-                    <div class="card Roupas">
-                        <a href="">
-                            <i class="fa-solid fa-shirt"></i>
-                            <p>Roupas</p>
-                        </a>
-                    </div>
-                    <div class="card Brinquedos">
-                        <a href="">
-                            <i class="fa-solid fa-car"></i>
-                            <p>Brinquedos</p>
-                        </a>
-                    </div>
-                    <div class="card Eletrônicos">
-                        <a href="">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <p>Eletrônicos</p>
-                        </a>
-                    </div>
-                    <div class="card Outros">
-                        <a href="">
-                            <i class="fa-solid fa-boxes-stacked"></i>
-                            <p>Outros</p>
-                        </a>
+                <div class="swiper mySwiperCategorias">
+                    <div class="swiper-wrapper">
+                        <div class="categorias">
+                            <div class="swiper-slide">
+                                <div class="card Livros">
+                                    <a href="">
+                                        <i class="fa-solid fa-book"></i>
+                                        <p>Livros</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card Roupas">
+                                    <a href="">
+                                        <i class="fa-solid fa-shirt"></i>
+                                        <p>Roupas</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card Brinquedos">
+                                    <a href="">
+                                        <i class="fa-solid fa-car"></i>
+                                        <p>Brinquedos</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card Eletrônicos">
+                                    <a href="">
+                                        <i class="fa-solid fa-mobile-screen-button"></i>
+                                        <p>Eletrônicos</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card Outros">
+                                    <a href="">
+                                        <i class="fa-solid fa-boxes-stacked"></i>
+                                        <p>Outros</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -245,7 +261,7 @@
         new window.VLibras.Widget('https://vlibras.gov.br/app');
     </script>
 
-     <!-- Script para rolagem suave entre seções -->
+    <!-- Script para rolagem suave entre seções -->
     <script>
         document.querySelectorAll('a[href^="#"]').forEach(link => {
             link.addEventListener('click', function (e) {
@@ -260,7 +276,7 @@
                 }
             });
         });
-    </script>    
+    </script>
 
     <script src="home.js"></script>
 
