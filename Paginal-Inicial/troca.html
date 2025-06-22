@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,59 +8,42 @@
     <script src="https://kit.fontawesome.com/6b97982313.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="img/Logo-colorida.png" type="image/x-icon">
 </head>
-
 <body>
-    <form action="">
+    <form action="troca.php" method="POST">
         <h1>Bem-vindo(a) à tela de troca</h1>
         <p>Faça sua troca</p>
 
         <label for="nome-usuario">Digite seu nome de usuário</label>
-        <input type="text" class="input-text" id="nome-usuario" name="nome-usuario"
-            placeholder="Digite seu nome de usuário" required>
-        <br>
+        <input type="text" class="input-text" id="nome-usuario" name="nome-usuario" required><br>
 
         <label for="item-oferecido">Qual é o item que você está oferecendo?</label>
-        <input type="text" class="input-item" id="item-oferecido" name="item-oferecido"
-            placeholder="Qual é o item que você está oferecendo?" required>
-        <br>
+        <input type="text" class="input-item" id="item-oferecido" name="item-oferecido" required><br>
 
         <label for="tipo-acao">O que você deseja?</label>
-        <select name="tipo-acao" id="tipo-acao">
+        <select name="tipo-acao" id="tipo-acao" required>
             <option value="" disabled selected>Selecione uma opção</option>
             <option value="tr">Trocar</option>
             <option value="do">Doar</option>
-        </select>
-        <br>
+        </select><br>
 
-        <!-- Se o usuário selecionar "Trocar", aparecerão os campos abaixo -->
         <label for="usuario-parceiro">Digite o nome do usuário com quem deseja realizar a troca</label>
-        <input type="text" class="input-usuario" id="usuario-parceiro" name="usuario-parceiro"
-            placeholder="Digite o nome do usuário para a troca" required>
-        <br>
+        <input type="text" class="input-usuario" id="usuario-parceiro" name="usuario-parceiro" placeholder="Digite o nome do usuário"><br>
 
         <label for="item-parceiro">Qual é o item que o outro usuário está oferecendo?</label>
-        <input type="text" class="input-item2" id="item-parceiro" name="item-parceiro"
-            placeholder="Qual é o item do outro usuário?" required>
-        <br>
+        <input type="text" class="input-item2" id="item-parceiro" name="item-parceiro" placeholder="Qual é o item do outro usuário?"><br>
 
-        <input type="submit" value="Trocar" class="btn-form">
-
-        <!-- Se o usuário selecionar "Doar", aparecerão as opções abaixo -->
         <label for="categoria-doacao">Qual a categoria do item que você deseja doar?</label>
         <select name="categoria-doacao" id="categoria-doacao">
             <option value="" disabled selected>Selecione uma opção</option>
-            <option value="li">Livros</option>
-            <option value="ro">Roupas</option>
-            <option value="br">Brinquedos</option>
-            <option value="el">Eletrônicos</option>
-            <option value="ou">Outros</option>
-        </select> <br>
+            <option value="Livros">Livros</option>
+            <option value="Roupas">Roupas</option>
+            <option value="Brinquedos">Brinquedos</option>
+            <option value="Eletrônicos">Eletrônicos</option>
+            <option value="Outros">Outros</option>
+        </select><br>
 
-        <input type="submit" value="Doar" class="btn-form">
-
-
+        <input type="submit" value="Confirmar" class="btn-form" id="enviar-btn">
     </form>
     <script src="troca.js"></script>
 </body>
-
 </html>

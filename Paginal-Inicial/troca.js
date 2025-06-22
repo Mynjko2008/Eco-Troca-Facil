@@ -1,65 +1,67 @@
 document.addEventListener('DOMContentLoaded', function () {
     const tipoAcao = document.getElementById('tipo-acao');
+    const form = document.querySelector('form');
+    const enviarBtn = document.getElementById('enviar-btn');
 
-    // Campos e labels da TROCA
-    const campoUsuarioParceiro = document.getElementById('usuario-parceiro');
-    const labelUsuarioParceiro = document.querySelector('label[for="usuario-parceiro"]');
+    const campos = {
+        usuarioParceiro: document.getElementById('usuario-parceiro'),
+        itemParceiro: document.getElementById('item-parceiro'),
+        categoriaDoacao: document.getElementById('categoria-doacao')
+    };
 
-    const campoItemParceiro = document.getElementById('item-parceiro');
-    const labelItemParceiro = document.querySelector('label[for="item-parceiro"]');
+    const labels = {
+        usuarioParceiro: document.querySelector('label[for="usuario-parceiro"]'),
+        itemParceiro: document.querySelector('label[for="item-parceiro"]'),
+        categoriaDoacao: document.querySelector('label[for="categoria-doacao"]')
+    };
 
-    const botaoTrocar = document.querySelector('input[value="Trocar"]');
+    function esconderCampos() {
+        campos.usuarioParceiro.style.display = 'none';
+        labels.usuarioParceiro.style.display = 'none';
 
-    // Campos e labels da DOAÇÃO
-    const campoCategoriaDoacao = document.getElementById('categoria-doacao');
-    const labelCategoriaDoacao = document.querySelector('label[for="categoria-doacao"]');
+        campos.itemParceiro.style.display = 'none';
+        labels.itemParceiro.style.display = 'none';
 
-    const botaoDoar = document.querySelector('input[value="Doar"]');
-
-    function esconderTodos() {
-        // TROCA
-        campoUsuarioParceiro.style.display = 'none';
-        labelUsuarioParceiro.style.display = 'none';
-
-        campoItemParceiro.style.display = 'none';
-        labelItemParceiro.style.display = 'none';
-
-        botaoTrocar.style.display = 'none';
-
-        // DOAÇÃO
-        campoCategoriaDoacao.style.display = 'none';
-        labelCategoriaDoacao.style.display = 'none';
-
-        botaoDoar.style.display = 'none';
+        campos.categoriaDoacao.style.display = 'none';
+        labels.categoriaDoacao.style.display = 'none';
     }
 
     function mostrarTroca() {
-        campoUsuarioParceiro.style.display = 'block';
-        labelUsuarioParceiro.style.display = 'block';
+        campos.usuarioParceiro.style.display = 'block';
+        labels.usuarioParceiro.style.display = 'block';
 
-        campoItemParceiro.style.display = 'block';
-        labelItemParceiro.style.display = 'block';
-
-        botaoTrocar.style.display = 'inline-block';
+        campos.itemParceiro.style.display = 'block';
+        labels.itemParceiro.style.display = 'block';
     }
 
     function mostrarDoacao() {
-        campoCategoriaDoacao.style.display = 'block';
-        labelCategoriaDoacao.style.display = 'block';
-
-        botaoDoar.style.display = 'inline-block';
+        campos.categoriaDoacao.style.display = 'block';
+        labels.categoriaDoacao.style.display = 'block';
     }
 
     tipoAcao.addEventListener('change', function () {
-        esconderTodos();
-
-        if (this.value === 'tr') {
-            mostrarTroca();
-        } else if (this.value === 'do') {
-            mostrarDoacao();
-        }
+        esconderCampos();
+        if (this.value === 'tr') mostrarTroca();
+        else if (this.value === 'do') mostrarDoacao();
     });
 
-    // Ocultar ao iniciar
-    esconderTodos();
+    form.addEventListener('submit', function () {
+        const acao = tipoAcao.value;
+
+        if (acao === 'tr') {
+            alert("Troca realizada com sucesso!");
+        } else if (acao === 'do') {
+            alert("Doação realizada com sucesso!");
+        }
+
+        setTimeout(() => {
+            if (confirm("Deseja voltar à tela de início?")) {
+                window.location.href = "home.html";
+            }
+        }, 500);
+
+        // Não usamos preventDefault — deixamos o form ser enviado normalmente
+    });
+
+    esconderCampos();
 });

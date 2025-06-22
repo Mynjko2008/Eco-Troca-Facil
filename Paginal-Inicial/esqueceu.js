@@ -1,22 +1,14 @@
-// Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener('DOMContentLoaded', function () {
-    // Seleciona o formulário
     const form = document.querySelector('form');
-    // Seleciona o campo de nome
     const nome = document.getElementById('input-nome');
-    // Seleciona o campo de email
     const email = document.getElementById('input-email');
-    // Seleciona o campo de senha
     const senha = document.getElementById('input-senha');
-    // Seleciona o campo de confirmação de senha
     const confirmarSenha = document.getElementById('input-confirmar-senha');
 
-    // Adiciona evento de clique a cada ícone de "mostrar/ocultar senha"
+    // Mostrar/ocultar senha
     document.querySelectorAll('.toggle-password').forEach(function (icon) {
         icon.addEventListener('click', function () {
-            // Obtém o campo de senha associado ao ícone clicado
             const target = document.getElementById(this.dataset.target);
-            // Alterna entre mostrar e ocultar a senha
             if (target.type === 'password') {
                 target.type = 'text';
                 this.classList.remove('fa-eye');
@@ -29,37 +21,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Adiciona evento de envio ao formulário
+    // Envio e validação
     form.addEventListener('submit', function (event) {
-        event.preventDefault();  // Impede o envio padrão do formulário
+        event.preventDefault();  // Impede o envio padrão
 
-        // Verifica se o campo de nome está preenchido
+        // Validações básicas
         if (nome.value.trim() === '') {
             alert('Por favor, preencha o nome completo.');
             nome.focus();
             return;
         }
 
-        // Valida o formato do e-mail
         if (!validarEmail(email.value)) {
             alert('Por favor, insira um e-mail válido.');
             email.focus();
             return;
         }
 
-
-        // Armazena o valor da senha
         const senhaValor = senha.value;
 
-        // Validação da senha
-        if (senhaValor.length < 8) {
-            alert('A senha deve ter pelo menos 8 caracteres.');
-            senha.focus();
-            return;
-        }
-
-        if (senhaValor.length > 15) {
-            alert('A senha não pode ter mais que 15 caracteres.');
+        if (senhaValor.length < 8 || senhaValor.length > 15) {
+            alert('A senha deve ter entre 8 e 15 caracteres.');
             senha.focus();
             return;
         }
@@ -88,31 +70,45 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Verifica se a confirmação de senha é igual à senha
         if (senhaValor !== confirmarSenha.value) {
             alert('As senhas não coincidem.');
             confirmarSenha.focus();
             return;
         }
 
-        // Exibe mensagem de sucesso
-        alert(' Troca de senha realizada com sucesso! Redirecionando para a tela de login...');
+        // Envia via fetch
+        const formData = new FormData(form);
 
-        // Redireciona para a página de login após 1,5 segundos
-        setTimeout(function () {
-            window.location.href = 'login.html';
-        }, 1500);
+        fetch('redefinir_senha.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                const resposta = data.trim();
+                console.log("🔍 Resposta do PHP:", resposta);
+
+                if (resposta === 'success') {
+                    alert('Senha redefinida com sucesso!');
+                    setTimeout(() => {
+                        window.location.href = 'login.html';
+                    }, 1500);
+                } else if (resposta === 'usuario_nao_encontrado') {
+                    alert('Usuário não encontrado com o nome e e-mail informados.');
+                } else if (resposta === 'nenhuma_alteracao') {
+                    alert('A nova senha é igual à anterior ou nenhum dado foi alterado.');
+                } else {
+                    alert('Erro ao redefinir a senha. Verifique os dados.');
+                }
+            })
+            .catch(error => {
+                console.error('Erro na requisição:', error);
+                alert('Erro de conexão com o servidor.');
+            });
     });
 
-    // Função para validar o formato do e-mail
     function validarEmail(email) {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailRegex.test(email);
     }
-
-    // Adiciona evento de clique ao link de login para redirecionar
-    loginLink.addEventListener('click', function (event) {
-        event.preventDefault();  // Impede o comportamento padrão do link
-        window.location.href = 'login.html';
-    });
 });
