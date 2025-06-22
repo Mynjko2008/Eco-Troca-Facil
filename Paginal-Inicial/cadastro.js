@@ -1,4 +1,3 @@
-// Aguarda o carregamento completo do DOM antes de executar o código
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
     const nome = document.getElementById('input-nome');
@@ -8,25 +7,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const confirmarSenha = document.getElementById('input-confirmar-senha');
     const loginLink = document.querySelector('.login-link');
 
+    // Mostrar/ocultar senha
     document.querySelectorAll('.toggle-password').forEach(function (icon) {
         icon.addEventListener('click', function () {
             const target = document.getElementById(this.dataset.target);
-            if (target.type === 'password') {
-                target.type = 'text';
-                this.classList.remove('fa-eye');
-                this.classList.add('fa-eye-slash');
-            } else {
-                target.type = 'password';
-                this.classList.remove('fa-eye-slash');
-                this.classList.add('fa-eye');
-            }
+            const isPassword = target.type === 'password';
+            target.type = isPassword ? 'text' : 'password';
+            this.classList.toggle('fa-eye');
+            this.classList.toggle('fa-eye-slash');
         });
     });
 
+    // Validação e envio do formulário
     form.addEventListener('submit', function (event) {
-        // REMOVE o event.preventDefault(); para permitir o envio
-        // event.preventDefault();
+        event.preventDefault(); // Agora vamos usar fetch
 
+        // Validações no front-end
         if (nome.value.trim() === '') {
             alert('Por favor, preencha o nome completo.');
             nome.focus();
@@ -47,14 +43,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const senhaValor = senha.value;
 
-        if (senhaValor.length < 8) {
-            alert('A senha deve ter pelo menos 8 caracteres.');
-            senha.focus();
-            return;
-        }
-
-        if (senhaValor.length > 15) {
-            alert('A senha não pode ter mais que 15 caracteres.');
+        if (senhaValor.length < 8 || senhaValor.length > 15) {
+            alert('A senha deve ter entre 8 e 15 caracteres.');
             senha.focus();
             return;
         }
@@ -89,8 +79,32 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Se todas as validações passarem, o formulário será enviado para o PHP
-        // Nenhuma mensagem final em JS: quem trata é o cadastro.php
+        // Envio via fetch
+        const formData = new FormData(form);
+
+        fetch('cadastro.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text())
+        .then(data => {
+            const resposta = data.trim();
+
+            if (resposta === 'success') {
+                alert('✅ Cadastro realizado com sucesso!');
+                setTimeout(() => {
+                    window.location.href = 'login.html';
+                }, 1000);
+            } else if (resposta === 'senha_invalida') {
+                alert('❌ A senha não atende aos critérios de segurança.');
+            } else {
+                alert('Erro inesperado no cadastro: ' + resposta);
+            }
+        })
+        .catch(error => {
+            console.error('Erro na requisição:', error);
+            alert('Erro de conexão com o servidor.');
+        });
     });
 
     function validarEmail(email) {
