@@ -16,7 +16,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 1em;
 }
 
 /* Form Container */
@@ -28,6 +29,19 @@ form {
     text-align: center;
     width: 100%;
     max-width: 400px;
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Form Heading */
@@ -89,9 +103,9 @@ form input[type="password"]:focus {
 
 .senha-container .toggle-password {
     position: absolute;
-    top: 30%;
-    right: 10px;
+     top: 50%;
     transform: translateY(-50%);
+    right: 10px;
     cursor: pointer;
     color: #333;
 }
