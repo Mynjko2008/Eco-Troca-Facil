@@ -3,10 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 include("conexao.php");
 
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-
 function limpar($v) {
     return htmlspecialchars(trim($v));
 }
@@ -18,20 +14,34 @@ $parceiro = $_POST['usuario-parceiro'] ?? null;
 $item_parceiro = $_POST['item-parceiro'] ?? null;
 $categoria = $_POST['categoria-doacao'] ?? null;
 
+// Se for troca, verificar se o parceiro existe
+if ($tipo === 'trocar') {
+    $verifica = $conn->prepare("SELECT id FROM usuarios WHERE nome = ?");
+    $verifica->bind_param("s", $parceiro);
+    $verifica->execute();
+    $res = $verifica->get_result();
+
+    if ($res->num_rows === 0) {
+        echo "parceiro_nao_encontrado";
+        exit;
+    }
+}
+
 $sql = "INSERT INTO objetos (nome_usuario, tipo_acao, item_oferecido, usuario_parceiro, item_parceiro, categoria_doacao)
         VALUES (?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
 if (!$stmt) {
-    die("Erro ao preparar: " . $conn->error);
+    echo "erro_preparar";
+    exit;
 }
 
 $stmt->bind_param("ssssss", $nome, $tipo, $item, $parceiro, $item_parceiro, $categoria);
 
 if ($stmt->execute()) {
-    echo " Registro inserido com sucesso na tabela `objetos`.";
+    echo "sucesso";
 } else {
-    echo " Erro ao inserir: " . $stmt->error;
+    echo "erro_inserir";
 }
 
 $conn->close();

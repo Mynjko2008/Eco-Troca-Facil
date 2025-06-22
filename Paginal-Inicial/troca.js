@@ -45,22 +45,39 @@ document.addEventListener('DOMContentLoaded', function () {
         else if (this.value === 'do') mostrarDoacao();
     });
 
-    form.addEventListener('submit', function () {
-        const acao = tipoAcao.value;
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // agora vamos controlar o envio via fetch
 
-        if (acao === 'tr') {
-            alert("Troca realizada com sucesso!");
-        } else if (acao === 'do') {
-            alert("Doação realizada com sucesso!");
-        }
+        const formData = new FormData(form);
 
-        setTimeout(() => {
-            if (confirm("Deseja voltar à tela de início?")) {
-                window.location.href = "home.html";
-            }
-        }, 500);
+        fetch('troca.php', {
+            method: 'POST',
+            body: formData
+        })
+            .then(response => response.text())
+            .then(data => {
+                const resposta = data.trim();
 
-        // Não usamos preventDefault — deixamos o form ser enviado normalmente
+                if (resposta === 'sucesso') {
+                    alert("✅ Operação registrada com sucesso!");
+                } else if (resposta === 'parceiro_nao_encontrado') {
+                    alert("❌ O usuário parceiro informado não existe.");
+                    return;
+                } else {
+                    alert("⚠️ Erro ao registrar. Código: " + resposta);
+                    return;
+                }
+
+                setTimeout(() => {
+                    if (confirm("Deseja voltar à tela de início?")) {
+                        window.location.href = "home.html";
+                    }
+                }, 500);
+            })
+            .catch(error => {
+                console.error("Erro na requisição:", error);
+                alert("Erro de conexão com o servidor.");
+            });
     });
 
     esconderCampos();
