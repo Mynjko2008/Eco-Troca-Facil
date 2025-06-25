@@ -103,7 +103,7 @@ form input[type="password"]:focus {
 
 .senha-container .toggle-password {
     position: absolute;
-     top: 50%;
+     top: 30%;
     transform: translateY(-50%);
     right: 10px;
     cursor: pointer;
