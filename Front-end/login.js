@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Enviar os dados via fetch para login.php
         const formData = new FormData(form);
 
-        fetch('login.php', {
+        fetch('../Back-end/login.php', {
             method: 'POST',
             body: formData
         })

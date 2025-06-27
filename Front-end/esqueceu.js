@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Envia via fetch
         const formData = new FormData(form);
 
-        fetch('redefinir_senha.php', {
+        fetch('../Back-end/redefinir_senha.php', {
             method: 'POST',
             body: formData
         })

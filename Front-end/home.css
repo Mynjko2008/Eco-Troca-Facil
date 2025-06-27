@@ -345,6 +345,7 @@ header.scrolled {
     width: 100%;
     padding: 1em 0 0 5em;
 }
+
 /*Fim do Carrousel*/
 
 .swiper-slide {
@@ -371,9 +372,8 @@ header.scrolled {
 
 .itens {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
-    /*O auto-fit é um valor especial que detecta automaticamente quantas colunas cabem dentro do container.
-Ele ajusta o número de colunas com base no espaço disponível. 1fr → Tamanho máximo (cada coluna pode crescer até ocupar o espaço disponível proporcionalmente).*/
+    grid-template-columns: repeat(3, 1fr);
+    /* força 3 colunas */
     gap: 2em;
     padding: 5em 0 0 9em;
 }
@@ -680,6 +680,8 @@ footer h3 span {
     .itens {
         align-items: center;
         justify-content: center;
+        grid-template-columns: 1fr; /* 1 item por linha */
+        padding: 1em;
     }
 
     .box:nth-child(n+4) {
@@ -758,8 +760,8 @@ footer h3 span {
     }
 
     .itens {
-        grid-template-columns: repeat(auto-fit, minmax(15em, 1fr));
-        gap: 1.5em;
+        grid-template-columns: repeat(2, 1fr); /* força 2 colunas */
+        padding: 2em;
         justify-content: center;
         padding-bottom: 2em;
     }

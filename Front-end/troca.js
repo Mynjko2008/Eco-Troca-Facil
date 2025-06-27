@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const formData = new FormData(form);
 
-        fetch('troca.php', {
+        fetch('../Back-end/troca.php', {
             method: 'POST',
             body: formData
         })
