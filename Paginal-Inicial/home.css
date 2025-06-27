@@ -340,6 +340,19 @@ header.scrolled {
     color: white;
 }
 
+/* Inico da Carrousel */
+.mySwiperCategorias {
+    width: 100%;
+    padding: 1em 0 0 5em;
+}
+/*Fim do Carrousel*/
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /*Fim da Section 2*/
 
 /*Inicio da Section 3*/
@@ -378,6 +391,7 @@ Ele ajusta o número de colunas com base no espaço disponível. 1fr → Tamanho
     transition: opacity 1s ease, transform 1s ease;
     /*ease é a função de tempo (faz a transição começar devagar, acelerar no meio e desacelerar no final).*/
     border-radius: 15px;
+    cursor: pointer;
 }
 
 .box:hover {
@@ -529,16 +543,7 @@ footer h3 span {
 
 /*Fim do Roda pe*/
 
-.mySwiperCategorias {
-    width: 100%;
-    padding: 1em 0 0 5em;
-}
 
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 
 /* ========== SMARTPHONES (max-width: 768px) ========== */
