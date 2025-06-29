@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Envio via fetch
         const formData = new FormData(form);
 
-        fetch('cadastro.php', {
+        fetch('../Back-end/cadastro.php', {
             method: 'POST',
             body: formData
         })
