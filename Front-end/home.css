@@ -681,7 +681,7 @@ footer h3 span {
         align-items: center;
         justify-content: center;
         grid-template-columns: 1fr; /* 1 item por linha */
-        padding: 1em;
+        padding: 5em;
     }
 
     .box:nth-child(n+4) {

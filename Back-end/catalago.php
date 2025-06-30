@@ -27,9 +27,11 @@ $result = $stmt->get_result();
 <head>
     <meta charset="UTF-8">
     <title>Catálogo</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Front-end/home.css">
 </head>
 <body>
+
+
        <!-- Exibe o título com o nome da categoria filtrada ou "Todos os Itens" -->
     <h1>Catálogo de <?php echo $categoria ?? 'Todos os Itens'; ?></h1>
 
