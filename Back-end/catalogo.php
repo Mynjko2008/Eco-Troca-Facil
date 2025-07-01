@@ -30,12 +30,9 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="../Front-end/home.css">
 </head>
 <body>
-
-
-       <!-- Exibe o título com o nome da categoria filtrada ou "Todos os Itens" -->
-    <h1>Catálogo de <?php echo $categoria ?? 'Todos os Itens'; ?></h1>
-
-    <div class="catalogo">
+      <div class="catalogo">
+           <!-- Exibe o título com o nome da categoria filtrada ou "Todos os Itens" -->
+        <h1>Catálogo de <?php echo $categoria ?? 'Todos os Itens'; ?></h1>
            <!-- Loop para percorrer cada linha retornada pelo banco -->
         <?php while($row = $result->fetch_assoc()) { ?>
             <div class="item">
