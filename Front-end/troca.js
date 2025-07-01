@@ -18,12 +18,15 @@ document.addEventListener('DOMContentLoaded', function () {
     function esconderCampos() {
         campos.usuarioParceiro.style.display = 'none';
         labels.usuarioParceiro.style.display = 'none';
+        campos.usuarioParceiro.value = ''; // limpa o campo
 
         campos.itemParceiro.style.display = 'none';
         labels.itemParceiro.style.display = 'none';
+        campos.itemParceiro.value = ''; // limpa o campo
 
         campos.categoriaDoacao.style.display = 'none';
         labels.categoriaDoacao.style.display = 'none';
+        campos.categoriaDoacao.value = ''; // limpa o select
     }
 
     function mostrarTroca() {
@@ -37,6 +40,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function mostrarDoacao() {
         campos.categoriaDoacao.style.display = 'block';
         labels.categoriaDoacao.style.display = 'block';
+
+        // Limpa campos de troca por precaução
+        campos.usuarioParceiro.value = '';
+        campos.itemParceiro.value = '';
     }
 
     tipoAcao.addEventListener('change', function () {
@@ -46,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     form.addEventListener('submit', function (e) {
-        e.preventDefault(); // agora vamos controlar o envio via fetch
+        e.preventDefault(); // controla o envio
 
         const formData = new FormData(form);
 
@@ -80,5 +87,5 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     });
 
-    esconderCampos();
+    esconderCampos(); // esconde tudo no início
 });
