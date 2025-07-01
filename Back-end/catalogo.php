@@ -30,6 +30,29 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="../Front-end/home.css">
 </head>
 <body>
+
+    <header>
+            <div class="navegacao">
+                <div class="logo">
+                    <a href="#Home">
+                        <img src="../Front-end/img/Logo-branca.png" alt="Logo">
+                    </a>
+                    <a href="">
+                        <h3><span>Eco</span>Troca</h3>
+                    </a>
+
+                </div>
+
+                <i class="fa-solid fa-bars" id="menu" onclick="clickMenu()"></i>
+                <nav id="itens">
+                    <ul>
+                        <li>
+                            <a href="../Front-end/home.html">Home</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
     <div class="catalogo">
            <!-- Exibe o título com o nome da categoria filtrada ou "Todos os Itens" -->
         <h1>Catálogo de <?php echo $categoria ?? 'Todos os Itens'; ?></h1>
